@@ -1,0 +1,8 @@
+.error{
+color: red;
+font-size: 30px;
+}
+
+.flip-list-move {
+    transition: transform .5s;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>たにぐちまことvue.js</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    {{message}}
+
+    
+    
+    <!-- if構文とディレクティブ -->
+    <p v-if="error">見えたり見えなかったりする場合</p>
+    <!-- 属性の書き換え -->
+    <p v-bind:class="error_class">{{message}}</p>
+    <img v-bind:src="img_src">
+    
+    <!-- ボタンクリックで現在時刻表示v-onディレクティブ -->
+    <p>
+      {{now}}
+    </p>
+    <button v-on:click="time">現在時刻表示</button>
+    <!-- その時呼び出したいメソッドを定義するこの場合はtime -->
+    
+    <!-- 配列の内容を繰り返し表示する -->
+    <button　v-on:click="shuffle">
+      シャッフル
+    </button>
+    
+    <transition-group name="flip-list" tag="ul">
+      <li v-for="pref in prefs" v-bind:key="pref.name">
+            <!-- 変数名イン配列名 -->
+           {{ pref.name }}
+      </li>
+    </transition-group>
+    </ul>
+       
+    <alert-box>〇〇が入力されていません</alert-box>
+    
+
+   </div> 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
